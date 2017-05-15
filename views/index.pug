@@ -1,0 +1,33 @@
+extends ./layout.pug
+
+block body
+  
+  .non-responsive-body-wrapper
+    .non-responsive-body
+      .flash-sales-content(data-wio-id=content.id)
+        section.flash-sales-content__section
+          
+          include partials/featured.pug
+          
+          span.flash-sales-content__header Today's Sales
+            
+          ul
+            
+            each sale in sales
+              
+              - var homeCard = sale.getGroup('sale.sale') ? sale.getGroup('sale.sale').toArray()[0] : null
+              
+              if homeCard
+                - var title = homeCard.getStructuredText('title') ? homeCard.getStructuredText('title').asText() : "Title"
+                - var label = homeCard.getText('label') ? homeCard.getText('label') : "shopz"
+                - var imageUrl = homeCard.getImage('background-image') ? homeCard.getImage('background-image').url : null
+
+                li.flash-sales-content__sale.flash-sale-card
+                  .flash-sale-card__sale-time Sale Ends In 2 Days And 13 Hours
+                  .flash-sale-card__sale-title-container
+                    .flash-sale-card__sale-title !{title}
+                  .js-flash-sale-image-container
+                    a(href='#')
+                      img.flash-sale-card__img(alt=title, data-src=imageUrl, src=imageUrl)
+                  a.flash-sale-button(href='#') !{label}
+  

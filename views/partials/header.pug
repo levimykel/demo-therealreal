@@ -1,0 +1,37 @@
+.head-components
+  .head-marketing-page-spanner
+    p
+      | 20% Off! Use Promo Code: REAL — Sale Ends 6/1 6:59am PST Exclusions Apply* - 
+      a(href='#') See Details
+  .head-utility-container
+    .head-utility-page-spanner
+      .head-utility-row.js-header-menu-align
+        .head-utility-row__links.head-utility-row__links--not-logged-in
+          .head-utility-row__link
+            a.head-utility-row__sign-in.js-sign-in-link(href='#') Sign In
+            |  or 
+            a.head-utility-row__sign-up.js-sign-up-link(href='#') Create Account
+          .head-utility-row__link.js-header-account-link
+            a.icon-button.icon-button--account.js-sign-in-sign-up-link(href='#')
+  .head-logo-row
+    a.head-logo-row__link(href='/')
+      img.head-logo-row__logo(alt='The RealReal', title='Luxury consignment sales', src='/images/logo.svg')
+  .js-head-navigation-container
+    .head-nav-row.js-header-nav-menu-align
+      .head-nav-row__spacer-cell
+      .head-nav-row__categories-cell
+        a.head-nav-row__link(data-content='new arrivals', href='#') New Arrivals
+        a.head-nav-row__link.js-header-nav-link(data-menu='women', data-content='Women', href='#') Women
+        a.head-nav-row__link.js-header-nav-link(data-menu='men', data-content='Men', href='#') Men
+        a.head-nav-row__link.js-header-nav-link(data-menu='fjw', data-content='Jewelry & Watches', href='#') Jewelry & Watches
+        a.head-nav-row__link.js-header-nav-link(data-menu='art', data-content='Art & Home', href='#') Art & Home
+        a.head-nav-row__link(data-content='sale', href='#') Sale
+        a.head-nav-row__link.head-nav-row__link--consign.js-header-consign-link(data-content='consign', href='#') Consign
+      .head-nav-row__search-cell
+        .autocomplete-search-box.js-autocomplete-search
+          .branch-journeys-top
+          form(action='.')
+            input#search.autocomplete-search-box__input(type='search', name='search', placeholder='Search', maxlength='100')
+          a.autocomplete-search-box__cancel(href='javascript:void(0);') Cancel
+          .autocomplete-search-box__icon.autocomplete-search-box__icon--search
+          .autocomplete-search-box__options
