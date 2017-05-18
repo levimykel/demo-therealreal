@@ -1,17 +1,58 @@
+- var main = content.getGroup('homepage.main-offer').toArray()[0]
+- var mainImage = main.getImage('background-image')
+- var mainImageUrl = mainImage ? mainImage.url : ""
+- var label = main.getText('banner-label') ? main.getText('banner-label') : "Shopz"
+- var mainTitle = main.getStructuredText('main-title')
+- var mainTitleText = mainTitle ? mainTitle.asHtml() : ""
+- var mainSub = main.getStructuredText('subtitle')
+- var mainSubText = mainSub ? mainSub.asHtml() : ""
+
+
+- var featured = content.getGroup('homepage.featured-promo').toArray()
+- var top = featured[0]
+- var bottom = featured[1]
+
+- var topImage = top.getImage('image')
+- var topImageUrl = topImage ? topImage.url : ""
+- var topTitle = top.getStructuredText('title')
+- var topTitleText = topTitle ? topTitle.asHtml() : ""
+- var topSub = top.getStructuredText('subtitle')
+- var topSubText = topSub ? topSub.asHtml() : ""
+
+- var bottomImage = bottom.getImage('image')
+- var bottomImageUrl = bottomImage ? bottomImage.url : ""
+- var bottomTitle = bottom.getStructuredText('title')
+- var bottomTitleText = bottomTitle ? bottomTitle.asHtml() : ""
+- var bottomSub = bottom.getStructuredText('subtitle')
+- var bottomSubText = bottomSub ? bottomSub.asHtml() : ""
+
 .flash-sales-content__featured-container
   .featured-sale-card
     .js-flash-sale-image-container.featured-sale-card__image-container
       a(href='#')
-        img.featured-sale-card__image(alt="Mother's Day Gifts For Yourself", src='/images/large.jpg')
-    a.flash-sale-button.flash-sale-button--featured(href='#') Shop
+        img.featured-sale-card__image(alt="Mother's Day Gifts For Yourself", src=mainImageUrl)
+        div.featured-main-text
+          != mainTitleText
+          != mainSubText
+          
+    a.flash-sale-button.flash-sale-button--featured(href='#') !{label}
   .featured-promo-content
     .featured-promo-content__top
       .js-flash-sale-image-container
         a(href='#')
           .featured-promo-top
-            img.featured-promo-top__image--secondary(src='/images/top1.jpg', alt='Square')
+            img.featured-promo-top__image--secondary(src=topImageUrl, alt='Square')
+            div.featured-text
+              != topSubText
+              != topTitleText
+              p.learn-more Learn More >
+              
     .featured-promo-content__bottom
       .js-flash-sale-image-container
         a(href='#')
           .featured-promo-bottom
-            img.featured-promo-bottom__image--secondary(src='/images/top2.jpg', alt='Square')
+            img.featured-promo-bottom__image--secondary(src=bottomImageUrl, alt='Square')
+            div.featured-text
+              != bottomSubText
+              != bottomTitleText
+              p.learn-more Learn More >

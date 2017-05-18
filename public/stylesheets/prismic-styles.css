@@ -1,0 +1,68 @@
+.flash-sales-content {
+  position: relative;
+}
+.wio-link {
+  position: absolute;
+  top: 20px;
+  right: 0;
+}
+
+
+.js-flash-sale-image-container {
+  position: relative;
+  border: 1px solid #cccccc;
+}
+.js-flash-sale-image-container img {
+  top: 4px;
+  left: 5px;
+}
+.featured-text {
+  position: absolute;
+  top: 30px;
+  right: 4px;
+  width: 168px;
+}
+.featured-text h6 {
+  margin-bottom: 0;
+  font-size: 14px;
+  font-style: italic;
+  font-family: cursive;
+  font-weight: normal;
+  color: #969696;
+}
+.featured-text h1 {
+  margin-bottom: 6px;
+  font-size: 16px;
+  color: #000000;
+}
+.featured-text .learn-more {
+  margin-bottom: 0;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #000000;
+}
+.featured-main-text {
+  position: absolute;
+  top: 59px;
+  left: 29px;
+  width: 248px;
+  height: 191px;
+  padding-top: 75px;
+  text-align: center;
+  background: #ffffff;
+}
+.featured-main-text h1 {
+  margin-bottom: 7px;
+  font-size: 18px;
+  font-family: cursive;
+}
+.featured-main-text h2 {
+  font-family: serif;
+  font-size: 23px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+
+
+
