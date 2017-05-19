@@ -60,20 +60,28 @@ app.get('/', function(req, res) {
   
   req.prismic.api.getSingle("homepage").then(function(homepage) {
     
-    // Get the array of featured sales links
-    var salesIds = [];
-    if ( homepage.getGroup('homepage.sales') ) {
-      var sales = homepage.getGroup('homepage.sales').toArray();
-      sales.forEach(function(sale){
-        salesIds.push(sale.getLink('sale').id);
+      // Query the banner for the homepage
+        req.prismic.api.getByUID('banner', 'homepage').then(function(banner) {
+
+      // Get the array of featured sales links
+      var salesIds = [];
+      if ( homepage.getGroup('homepage.sales') ) {
+        var sales = homepage.getGroup('homepage.sales').toArray();
+        sales.forEach(function(sale){
+          salesIds.push(sale.getLink('sale').id);
+        });
+      }
+
+      // Query the sales by their ids
+      req.prismic.api.getByIDs(salesIds).then(function(sales) {
+        
+        // Render the homepage
+        res.render('index', {
+          content : homepage,
+          sales : sales.results,
+          banner : banner
+        });
       });
-    }
-    
-    // Query the sales by their ids
-    req.prismic.api.getByIDs(salesIds).then(function(sales) {
-      
-      // Render the homepage
-      res.render('index', {content: homepage, sales: sales.results});
     });
   });
 });

@@ -16,6 +16,10 @@
   top: 4px;
   left: 5px;
 }
+.featured-promo-content__top .js-flash-sale-image-container img,
+.featured-promo-content__bottom .js-flash-sale-image-container img {
+  max-width: 141px;
+}
 .featured-text {
   position: absolute;
   top: 30px;
@@ -63,6 +67,9 @@
   text-transform: uppercase;
 }
 
-
+.full-width-promo {
+  width: 910px;
+  text-align: center;
+}
 
 

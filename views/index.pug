@@ -7,7 +7,15 @@ block body
       .flash-sales-content(data-wio-id=content.id)
         section.flash-sales-content__section
           
-          include partials/featured.pug
+          - console.log(JSON.stringify(banner.getSliceZone('banner.Banners').slices, null, 2));
+          
+          for slice in banner.getSliceZone('banner.Banners').slices
+            //- Render the right markup for a given slice type.
+            case slice.sliceType
+              when '3 images banner'
+                include partials/featured-3.pug
+              when 'Image full width'
+                include partials/featured-1.pug
           
           span.flash-sales-content__header Today's Sales
             

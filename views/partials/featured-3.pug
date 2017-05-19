@@ -1,8 +1,8 @@
-- var main = content.getGroup('homepage.main-offer').toArray()[0]
+- var main = slice.value.toArray()[0]
 - var mainImage = main.getImage('background-image')
 - var mainImageUrl = mainImage ? mainImage.url : ""
 - var label = main.getText('banner-label') ? main.getText('banner-label') : "Shopz"
-- var mainTitle = main.getStructuredText('main-title')
+- var mainTitle = banner.getStructuredText('main-title')
 - var mainTitleText = mainTitle ? mainTitle.asHtml() : ""
 - var mainSub = main.getStructuredText('subtitle')
 - var mainSubText = mainSub ? mainSub.asHtml() : ""
@@ -12,26 +12,26 @@
 - var top = featured[0]
 - var bottom = featured[1]
 
-- var topImage = top.getImage('image')
+- var topImage = main.getImage('Image Top Right')
 - var topImageUrl = topImage ? topImage.url : ""
-- var topTitle = top.getStructuredText('title')
+- var topTitle = main.getStructuredText('Title')
 - var topTitleText = topTitle ? topTitle.asHtml() : ""
-- var topSub = top.getStructuredText('subtitle')
+- var topSub = main.getStructuredText('subtitle')
 - var topSubText = topSub ? topSub.asHtml() : ""
 
-- var bottomImage = bottom.getImage('image')
+- var bottomImage = main.getImage('Image Bottom Right')
 - var bottomImageUrl = bottomImage ? bottomImage.url : ""
-- var bottomTitle = bottom.getStructuredText('title')
+- var bottomTitle = main.getStructuredText('Title bottom right')
 - var bottomTitleText = bottomTitle ? bottomTitle.asHtml() : ""
-- var bottomSub = bottom.getStructuredText('subtitle')
+- var bottomSub = main.getStructuredText('subtitle bottom right')
 - var bottomSubText = bottomSub ? bottomSub.asHtml() : ""
 
 .flash-sales-content__featured-container
   .featured-sale-card
     .js-flash-sale-image-container.featured-sale-card__image-container
       a(href='#')
-        img.featured-sale-card__image(alt="Mother's Day Gifts For Yourself", src=mainImageUrl)
-        div.featured-main-text
+        img.featured-sale-card__image(src=mainImageUrl)
+        //div.featured-main-text
           != mainTitleText
           != mainSubText
           
